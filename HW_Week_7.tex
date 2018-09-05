@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows.meta}
+\usepackage{pgfplots}
+\usepackage[scr]{rsfso}
+\usepackage{array}
+\usepackage{stackengine}
+\stackMath
+\hbadness=10001 %gets rid of "\hfill underfull" warning
+\usepackage{tikz,pgfplots}
+
+\pgfplotsset{compat=1.10}
+% Uncomment to use "fillbetween" function
+% otherwise leave commented because
+% the red highlighting is annoying
+%\usepgfplotslibrary{fillbetween}
+\iffalse
+\fi
+
+% Change for each new hw week
+\newcommand{\dueDate}{\formatdate{17}{11}{2017}} % day/month/year
+\newcommand{\hwNum}{7}
+
+
+\begin{document}
+	
+\selectlanguage{USenglish}	
+%------------------------ Title Code ------------------------
+\title{Homework: Week \hwNum}
+\author{Joseph Ismailyan}
+\date{}
+\maketitle
+\begin{flushleft}
+Math 100 \\
+Due: \dueDate \\ 
+Professor Boltje \\
+MWF 9:20a-10:25a
+\end{flushleft}
+
+
+%------------------------ Begin Page 1 ------------------------
+\begin{minipage}[t]{0.40\textwidth}
+
+
+
+\section*{Chapter 9}
+\subsection*{12}
+\textbf{Proposition}:  \\If $a,b,c\in \mathbb{N} $ and $ab, bc$ and $ac$ all have the same parity, then $a$, $b$, and $c$ all have the same parity.
+\newline\textit{Proof.} Suppose $a,b,c\in \mathbb{N} $ and $ab, bc$ and $ac$ all have the same parity. Then we can use the following example: $a=2$, $b=4$, $c=3$. We know that the product of any two natural numbers with opposite parity will be even, so $ab, bc$ and $ac$ are all even. But $a$ , $b$ and $c$ do not all have the same parity.
+
+\subsection*{14}
+\textbf{Proposition}:  \\If $A$ and $B$ are sets, then $\mathscr{P}{(A)}\cap\mathscr{P}{(B)}=\mathscr{P}{(A\cap B)}$.
+\newline\textit{Proof.} Let $ Y\in\mathscr{P}{(A\cap B)}$. Then $ Y\subseteq(A\cap B) $, so $ Y\subseteq A$ and $ Y\subseteq B$, and by definition of a power set, $ Y\subseteq\mathscr{P}{(A)}$ and $ Y\subseteq\mathscr{P}{(B)}\rightarrow Y\subseteq\mathscr{P}{(A)}\cap\mathscr{P}{(B)}$. Now let $ Y\subseteq\mathscr{P}{(A)}$ and $ Y\subseteq\mathscr{P}{(B)} $. So $ Y\in A$ and $ Y\in B \rightarrow Y\in(A\cap B)\rightarrow Y\subseteq\mathscr{P}{(A\cap B)}$. So $\mathscr{P}{(A)}\cap\mathscr{P}{(B)}=\mathscr{P}{(A\cap B)}$.
+
+
+\end{minipage}
+% Creates vertical line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+\subsection*{18}
+\textbf{Proposition}:  \\If $ a,b, c\in\mathbb{N} $, then at least one of $  a-b $, $ a+c $ and $ b-c $ is even.
+\newline\textit{Proof.} Suppose $ a,b, c\in\mathbb{N} $. The in order for $  a-b $, $ a+c $,  $ b-c $ to all have odd outcomes, the operands must all have a parity opposite that of the other operand. So then if $ a $ is odd then $ b $ must be even, but $ c $ must be even to make $ a+c $ odd, but then $ c $ must be odd to make $ b-c $ odd. So we can see that $ c $ must simultaneously have two parities, which would be the case no matter what parity $ a $ and $ b $ are. It's impossible for $ a,b,$ and $ c $ to have opposite parities. Therefore, at least one of  $  a-b $, $ a+c $ and $ b-c $ is even.
+
+\subsection*{28}
+\textbf{Proposition}:  \\Suppose $ a,b\in\mathbb{Z} $. If $ a|b $ and $ b|a $ then $ a=b $.
+\newline\textit{Proof.} Let $ a=1 $ and $ b=-1 $, then $ b=an, n=-1\in\mathbb{Z}$ so $ a|b $, alternatively $ a=bm, m=1\in\mathbb{Z}$ so $ b|a $, but $ a\not=b $.  
+
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 1 ------------------------
+
+
+
+%------------------------ Begin Page 2 ------------------------
+
+\begin{minipage}[t]{0.40\textwidth}
+
+\subsection*{34}
+\textbf{Proposition}:  \\If $ X\subseteq A\cup B $, then $ X\subseteq A $ or $ X\subseteq B $.
+\newline\textit{Proof.} Let $ A=\{1,2,3\}, B=\{3,4,5\}, X=\{1,4\} $. Then $ X\subseteq(A\cup B) $ but $ X\not\subseteq  A$ and $ X\not\subseteq  B$.
+
+
+
+\end{minipage}
+% Creates vertical line
+
+\begin{minipage}[t]{0.45\textwidth}
+
+\end{minipage}
+\pagebreak
+
+\iffalse %delete to add pages 2 and 3
+%------------------------ End Page 2 ------------------------
+
+%------------------------ Begin Page 3 ------------------------
+
+\begin{minipage}[t]{0.40\textwidth}
+	
+	
+	
+\section*{Section }
+\subsection*{}
+	
+
+	
+\end{minipage}
+% Creates vertical line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	
+
+
+\section*{Section }
+\subsection*{}
+	
+	
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 4 ------------------------
+
+\fi %delete to add pages 2 and 3
+
+
+\end{document}

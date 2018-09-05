@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows.meta}
+\usepackage{pgfplots}
+\usepackage[scr]{rsfso}
+\usepackage{array}
+\usepackage{stackengine}
+\stackMath
+
+\usepackage{tikz,pgfplots}
+
+\pgfplotsset{compat=1.10}
+% Uncomment to use %fillbetween" function
+% otherwise leave commented because
+% the red highlighting is annoying
+%\usepgfplotslibrary{fillbetween}
+
+% Change due date below
+\newcommand{\dueDate}{\formatdate{13}{10}{2017}}
+
+
+\begin{document}
+	
+%\selectlanguage{USenglish}	
+
+\title{Homework: Week 3}
+\author{Joseph Ismailyan}
+\date{}
+\maketitle
+\begin{flushleft}
+Math 100 \\
+Due: \dueDate \\ 
+Professor Boltje \\
+MWF 9:20a-10:25a
+\end{flushleft}
+
+% Insert first section here
+% Minipage creates the columns
+\begin{minipage}[t]{0.40\textwidth}
+
+\section*{Section 2.7}
+\subsection*{6.}
+Translate to English: \\$  \exists n \in \mathbb{N}, \forall X \in \mathscr{P}(\mathbb{N}) , |X| < n$\\
+
+Translated: There exists a natural number $ n $ for every subset $ X $ of $ \mathbb{N} $ where $ |X| <n $.\\
+
+This can be proven false with a simple counter example as follows: \\ $ X=\{1,2\} \text{ and } n=1 \text{ then } |X| > n$
+
+
+\section*{Section 2.9}
+\subsection*{6.}
+Translate to SL:\\
+For every positive number $ \varepsilon $ there is a positive number $ M $ for which \\$ |f(x)-b|<\varepsilon $, whenever $ x>M $.\\
+
+Logic:
+
+$\forall \varepsilon\in\mathbb{R},\varepsilon\geq 0, \exists M\in\mathbb{R},M\geq 0,$
+\\
+$
+(x>M) \implies (|f(x)-b|<\varepsilon)
+$
+
+\end{minipage}
+% Creates verticle line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+\section*{Section 2.10}
+\subsection*{8.}
+Translate: If $ x $ is a rational number and $ x \neq 0 $, then $ \tan(x) $ is not a rational number.\\
+
+SL: $ (x\in \mathbb{Q} \land x\neq 0)  \implies (tan(x) \notin \mathbb{Q})$ \\
+Negation:$ x\in \mathbb{Q} \land x\neq 0 \land tan(x) \in \mathbb{Q}$ \\
+
+Translation (Answer):  $ x $ is a rational number and $ x \neq 0 $ and $ \tan(x) $ is a rational number.
+
+
+
+\section*{Section 3.1}
+\subsection*{4.}
+Question: Five cards are dealt off of a standard 52-card deck and lined up in a row. How
+many such line-ups are there in which all 5 cards are of the same suit?
+
+Answer: $ 13*12*11*10*9 = 154,440 $
+\subsection*{12.}
+Answer: $ 5^5-(4^5+(5*4^4))=821$
+
+\end{minipage}
+\pagebreak
+
+
+\begin{minipage}[t]{0.40\textwidth}
+
+\section*{Section 3.2}
+\subsection*{8.}
+Answer: There are 4 places the odd sequence could start.\\
+$ O = \text{odd}, E = \text{even} $
+
+$$ \stackon{4}{O}\stackon{3}{O}\stackon{2}{O}\stackon{1}{O}\stackon{3}{E}\stackon{2}{E}\stackon{1}{E}  = \stackunder{144}{+}
+$$
+$$ \stackon{3}{E}\stackon{6}{O}\stackon{3}{O}\stackon{2}{O}\stackon{1}{O}\stackon{2}{E}\stackon{1}{E}  = \stackunder{144}{+}
+$$
+$$ \stackon{3}{E}\stackon{2}{E}\stackon{4}{O}\stackon{3}{O}\stackon{2}{O}\stackon{1}{O}\stackon{1}{E}  = \stackunder{144}{+}
+$$
+$$ \stackon{3}{E}\stackon{2}{E}\stackon{1}{E}\stackon{4}{O}\stackon{3}{O}\stackon{2}{O}\stackon{1}{O}  = 144
+$$
+$ \text{Total}: 576 $
+
+\section*{Section 3.3}
+\subsection*{10.}
+Answer: $ \binom{5}{3}\binom{7}{2} = 210$
+\subsection*{12.}
+Answer: \\$ \binom{21}{10}\binom{11}{11} =352,716$
+
+\end{minipage}
+% Creates verticle line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\section*{Section 3.4}
+\subsection*{12.}
+Show that:
+\[
+\binom{n}{k}\binom{k}{m}=\binom{n}{m}\binom{n-m}{k-m}
+\]
+LHS:\\
+\[=\frac{n!}{k!(n-k)!}*\frac{k!}{m!(k-m)!}\]
+\[=\frac{n!}{m!(n-k)!(k-m)!}\]
+RHS:\\
+\[=\frac{n!}{m!(n-m)!}*\frac{n-m!}{(k-m)![(n-m)-(k-m)]!}\]
+\[=\frac{n!}{m!(k-m)![n-m-k+m]!}\]
+\[=\frac{n!}{m!(k-m)!(n-k)!}\]
+
+\[\frac{n!}{m!(n-k)!(k-m)!} = \frac{n!}{m!(k-m)!(n-k)!}\]
+
+\[\therefore \binom{n}{k}\binom{k}{m}=\binom{n}{m}\binom{n-m}{k-m}\]
+
+\end{minipage}
+\pagebreak
+
+
+\end{document}

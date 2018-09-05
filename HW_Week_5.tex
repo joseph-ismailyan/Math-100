@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows.meta}
+\usepackage{pgfplots}
+\usepackage[scr]{rsfso}
+\usepackage{array}
+\usepackage{stackengine}
+\stackMath
+
+\usepackage{tikz,pgfplots}
+
+\pgfplotsset{compat=1.10}
+% Uncomment to use "fillbetween" function
+% otherwise leave commented because
+% the red highlighting is annoying
+%\usepgfplotslibrary{fillbetween}
+
+
+% Change for each new hw week
+\newcommand{\dueDate}{\formatdate{3}{11}{2017}} % day/month/year
+\newcommand{\hwNum}{5}
+
+
+\begin{document}
+	
+\selectlanguage{USenglish}	
+%------------------------ Title Code ------------------------
+\title{Homework: Week \hwNum}
+\author{Joseph Ismailyan}
+\date{}
+\maketitle
+\begin{flushleft}
+Math 100 \\
+Due: \dueDate \\ 
+Professor Boltje \\
+MWF 9:20a-10:25a
+\end{flushleft}
+
+
+%------------------------ Begin Page 1 ------------------------
+\begin{minipage}[t]{0.40\textwidth}
+
+
+
+\section*{Chapter 5}
+\subsection*{6.}
+ 
+\textbf{Proposition}:  \\If $ x\leq -1 $ then $ x^3-x\geq 0 $.
+\\\textit{Proof.} (Contrapositive) Suppose $ x \in \mathbb{R} $, and it is not the case that $ x>-1 $, so $ x\leq -1 $. Then $ x^3 $ and $ x $ are less than or equal to $ -1 $. Therefore $ x^3-x\leq0 $. Thus it is not true that $ x^3-x>0 $.
+$ \hfill\blacksquare $ 
+
+\subsection*{18.}
+\textbf{Proposition:} For any $ a,b\in \mathbb{Z}, $ it follows that $ (a+b)^3 \equiv a^3+b^3 (\mathrm{mod}\ 3)$.
+\\\textit{Proof.} Consider $ (a+b)^3 -  a^3+b^3 $. By the process of simplification, we get the following steps: $ (a+b)^3 - (a^3+b^3) $ 
+ $= (a^3+3a^2b+3ab^2+b^3) -a^3-b^3 $ 
+ $= 3a^2b+3ab^2 $. Since  $ a,b\in \mathbb{Z} $, we can say that $ 3(a^2b+ab^2) $ is an integer. Then $ (a^2b+ab^2) $had the property of $ (a+b)^3 -  a^3+b^3 = 3(a^2b+ab^2) $. Then it is proper to say $ 3|((a+b)^3 -  a^3+b^3) $. Therefore $ (a+b)^3 \equiv a^3+b^3 (\mathrm{mod}\quad n)$.
+$ \hfill\blacksquare $ 
+\end{minipage}
+% Creates verticle line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	
+\subsection*{22.}
+\textbf{Proposition:} Let $ a\in \mathbb{Z}, n\in \mathbb{N} $. If $ a $ has a remainder $ r $ when divided by $ n $, then $ a\equiv r(\mathrm{mod}\ n) $.
+\\\textit{Proof.} Suppose $ a $ has a remainder $ r $ when divided by $ n $. Then it follows that $ a=qn+r $ for some integer $ q $.  We can simplify this into $ \frac{a}{n}=q+\frac{r}{n}\rightarrow -q=\frac{r}{n}-\frac{r}{n}$ which becomes $ -qn=r-a $ and since $ q $ is an arbitrary integer, we can say $ c,c\in \mathbb{Z}, c=-q $. So then $ -qn=r-a $ becomes $ cn=r-a $, which clearly shows that $ r-a $ is divisible by $ n $, or just $ n|r-a $. Therefore $ a\equiv r(\mathrm{mod}\ n) $.
+$ \hfill\blacksquare $ 
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 1 ------------------------
+
+%------------------------ Begin Page 2 ------------------------
+
+\begin{minipage}[t]{0.40\textwidth}
+
+
+\section*{Chapter 6}
+\subsection*{6.}
+\textbf{Proposition:} If $ a,b\in \mathbb{Z} $, then \\ $ a^2-4b-2\neq0 $.
+\\\textit{Proof.} For the sake of contradiction, suppose $ a^2-4b-2=0 $. Then $ a^2=4b+2\rightarrow a^2=2(2b+1) $ which means $ a^2 $ is even, which implies $ a $ is even. Then $ a=2n $ for some integer $ n $. Substituting back into our original equation, we get $ (2n)^2-4b-2=0$ and through we series of simplification we get $ 4n^2-4b-2=0\rightarrow4(n^2-b)=2\rightarrow2(n^2-b)=1$, which implies that $ 1 $ is even because it's the result of multiplying two even numbers, but it is really not even so we've reached a contradiction.
+$ \hfill\blacksquare $ 
+\subsection*{16.}
+\textbf{Proposition:} If $ a $ and $ b $ are positive real numbers, then $ a+b\geq 2\sqrt{ab} $.
+\\\textit{Proof.} For the sake of contradiction, suppose $ a+b< 2\sqrt{ab} $. Then through a series of simplification we get \\$ (a+b)^2< 4ab \\\rightarrow a^2+2ab+b^2< 4ab \\\rightarrow a^2+b^2<2ab\\\rightarrow a^2-2ab-b^2<0\\\rightarrow (a-b)^2<0$ which is a contradiction because $ a $ and $ b $ are positive real numbers and when their difference is squared, it cannot be less than 0.
+$ \hfill\blacksquare $ 
+
+
+
+
+
+\end{minipage}
+% Creates verticle line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+	
+\subsection*{20.}
+\textbf{Proposition:} The curve $ x^2+y^2-3=0 $ has no rational points.
+\\\textit{Proof.} For the sake of contradiction, suppose $ x^2+y^2-3=0 $ has a rational point. Now suppose that the positive numbers $ x,y $ have a rational point $ (x,y) $ line on the curve. Then $ x $ and $ y $ can be rewritten as $ x=\frac{a}{b}, y=\frac{c}{d}, 0<a, b, c, d\in \mathbb{N} $ where $ a $ and $ b $ are relatively prime so then $ gcd(a,b)=1 $ and $ gcd(c,d)=1 $. Then by substation, we get $ (\frac{a}{b})^2+(\frac{c}{d})^2-3=0\rightarrow (ad)^2+(bc)^2-3(bd)^2=0\\\rightarrow (ad)^2+(bc)^2=3(bd)^2 $. Then we must have $ (ad)^2+(bc)^2\equiv 0(\mathrm{mod}\ 3)$. But recall we must have $ x\equiv 0(\mathrm{mod}\ 3) $ or $  x\equiv \pm1(\mathrm{mod}\ 3)$, thus $ x^2\equiv 0(\mathrm{mod}\ 3) $ or $ x^2\equiv 1(\mathrm{mod}\ 3) $ by properties of congruency. Then $ (ad)^2+(bc)^2 \equiv 0(\mathrm{mod}\ 3) \implies (ad)^2\equiv 0(\mathrm{mod}\ 3)$ and $ (bc)^2\equiv 0(\mathrm{mod}\ 3) $ again by properties of congruency. Then $ (ad)\equiv 0(\mathrm{mod}\ 3)$ and $ (bc)\equiv 0(\mathrm{mod}\ 3) $. Since 3 is prime, we must have $ a\equiv0(\mathrm{mod}\ 3) $ or $ d\equiv0(\mathrm{mod}\ 3) $, and $ b\equiv0(\mathrm{mod}\ 3)$ or $ c\equiv0(\mathrm{mod}\ 3) $. Then if $ b\equiv0(\mathrm{mod}\ 3) $ then $ a\not\equiv0(\mathrm{mod}\ 3) $ since $ gcd(a,b)=1 $. Then since $ b\equiv0(\mathrm{mod}\ 3) $ then $ d\equiv0(\mathrm{mod}\ 3) $. It follows that $ b=3n, d=3m, 0<n,m\in \mathbb{N} $. Therefore, $ (ad)^2+(bc)^2=3(bd)^2 \implies (3am)^2+(3cn)^2=3(9mn)^2 $. Thus, we have $ (am)^2+(cn)^2=27(mn)^2 $ so $ 3|(am)^2+(cn)^2 $ which means $gcd(a,b)\geq3 $ and $ gcd(c,d)\geq3 $.
+$ \hfill\blacksquare $
+
+\subsection*{24.}
+\textbf{Proposition:} $ \log_2 3 $ is irrational.
+\\\textit{Proof.} For the sake of contradiction, suppose $ \log_2 3 $ is rational. By definition of rational numbers, that means $ \log_2 3 $ can be written in the form $ \frac{a}{b} $ for arbitrary integers $ a $ and $ b $.  Therefore we can say $ 2^\frac{a}{b} = \frac{a}{b}$ using the definition of logarithms. Then we can simplify to $ 2^a=3^b $ which we know is false because an even number raised to an integer cannot be equal to an odd number raised to an integer. 
+$ \hfill\blacksquare $ 
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 2 ------------------------
+
+
+
+\end{document}

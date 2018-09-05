@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows.meta}
+\usepackage{pgfplots}
+\usepackage[scr]{rsfso}
+\usepackage{array}
+\usepackage{stackengine}
+\stackMath
+
+\usepackage{tikz,pgfplots}
+
+\pgfplotsset{compat=1.10}
+% Uncomment to use "fillbetween" function
+% otherwise leave commented because
+% the red highlighting is annoying
+%\usepgfplotslibrary{fillbetween}
+
+
+% Change for each new hw week
+\newcommand{\dueDate}{\formatdate{13}{11}{2017}} % day/month/year
+\newcommand{\hwNum}{6}
+
+
+\begin{document}
+	
+\selectlanguage{USenglish}	
+%------------------------ Title Code ------------------------
+\title{Homework: Week \hwNum}
+\author{Joseph Ismailyan}
+\date{}
+\maketitle
+\begin{flushleft}
+Math 100 \\
+Due: \dueDate \\ 
+Professor Boltje \\
+MWF 9:20a-10:25a
+\end{flushleft}
+
+
+%------------------------ Begin Page 1 ------------------------
+\begin{minipage}[t]{0.40\textwidth}
+
+
+
+\section*{Chapter 7}
+\subsection*{10.}
+
+\iffalse
+
+\textbf{Proposition}:  \\If $ a\in \mathbb{Z} $, then $  a^3\equiv a\pmod{3}  $.
+\newline\textit{Proof.} Suppose $ a\in \mathbb{Z} $. Consider $ (a-1)a(a+1) $. We can see that it is the product of three consecutive integers. It follows that \newline$ (a-1)a(a+1) =3!q, q\in \mathbb{Z}\newline =6q\newline=3(2q)\newline=3m, m=2q\in\mathbb{Z}.$ \newline Therefore $ 3|(a-1)a(a+1)\newline \rightarrow 3|(a^3-a)\rightarrow  a^3\equiv a\pmod{3}$.
+
+\fi
+\textbf{Proposition}:  \\If $ a\in \mathbb{Z} $, then $  a^3\equiv a\pmod{3}  $.
+ Suppose $ a\in \mathbb{Z} $. Consider $ (a-1)a(a+1) $to be the product of three consecutive integers, so then the remainder when being divided by $ 3 $ must be either $ 0,1 \text{ or } 2 $. Then consider the first term of the series, $ a-1=3n \rightarrow 3|(a-1) $. Then the next in the series, $ a=3n $ so $ 3|a $. And lastly,  $ a-2=3n \rightarrow a=3n-2=3(n+1)-1 $ then for some integer $ m=n+1\in\mathbb{Z} \rightarrow a=3m-1\rightarrow a+1=3m$ so $ 3|(a+1) $. Therefore we can say that $ 3|(a-1)a(a+1) $ or just $ 3|(a^3-a) $ which implies $ a^3\equiv a\pmod{3} $.     
+
+\end{minipage}
+% Creates verticle line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+\subsection*{22.}
+\textbf{Proposition}:  \\If $ n\in \mathbb{N} $, then $  4|n^2 $ or $ 4|(n^2-1)  $.
+\newline\textit{Proof.} This proof requires two cases, one in which $ n $ is $ even $ and one in which $ n $ is $ odd $. Once both cases are proven, we can say that Case I is true or Case II is true, since every $ n $ in the set of natural numbers is either $ even $ or $ odd $.
+\paragraph{} \textbf{Case I}
+\newline
+Suppose $ n $ is $ even $, therefore $ n=2k, n\in\mathbb{Z} $. Then $ n^2=(2k)^2=4k^2 $. We can then say $ n^2=4m,m=k^2\in\mathbb{Z} $ so $ 4|n^2 $.
+
+\paragraph{} \textbf{Case II}
+\newline
+Suppose $ n $ is $ odd $, therefore $ n=2a+1, n\in\mathbb{Z} $. Then $ n^2=(2a+1)^2=4a^2+4a+1 $. We can then say $ n^2-1=4(a^2+a)=4b, b=(a^2+a)\in\mathbb{Z} $. Therefore $ 4|(n^2-1) $.
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 1 ------------------------
+
+%------------------------ Begin Page 2 ------------------------
+
+\begin{minipage}[t]{0.40\textwidth}
+
+
+\subsection*{26.}
+\textbf{Proposition}:  \\The product of any $ n $ consecutive positive integers is divisible by $ n! $.
+\newline\textit{Proof.} Suppose we write $ n $ consecutive positive integers as $ m,(m-1),(m-2),(m-3),...,(m-(n-1)) $. Then the product of these $ n $ consecutive positive integers would be $ m(m-1)(m-2)(m-3)...(m-(n-1))$. If we write $ \frac{m(m-1)(m-2)(m-3)...(m-(n-1))}{n!} $ then it is apparent that we have the number of ways to pick $ n $ items from a list of length $ m $. We can then multiply the expression by $ \frac{(m-n)!}{(m-n)!} $ then we get $ \frac{m(m-1)(m-2)(m-3)...(m-(n-1))(m-n)!}{n!(m-n)!} $ which can be simplified to $ \frac{m!}{(m-n)!n!} $. Recall that $ \frac{m!}{(m-n)!n!} $ is defined as $ {m}\choose{n} $ which yields an integer for all $ m\geq n $.
+
+\subsection*{32.}
+\textbf{Proposition}:  \\If $ n\in\mathbb{Z} $, then $ gcd(n,n+2)\in\{1,2\} $.  
+\newline\textit{Proof.} Suppose $ d=gcd(n,n+2) $, it follows that $ d|n $ and $ d|(n+2) $. So $ n=da, a\in\mathbb{Z} $ and $ n+2=dc, c\in\mathbb{Z} $. Then substituting $ n=da $ into $  n+2=dc $, we get $ da+2=dc\rightarrow 2=dc-da\rightarrow 2=d(c-a)=dm, m\in\mathbb{Z} $. Since $ 2=dm $, we know that $ d $ is a divisor of 2, and 2 has the divisors $ \pm1,\pm2 $. Since $ d $ is the \textbf{greatest} common divisor, then $ d=1 $ or $ d=2 $. Therefore $ d\in\{1,2\} $ and since $ d=gcd(n,n+2) $ then $ gcd(n,n+2)\in\{1,2\} $.
+
+
+\end{minipage}
+% Creates verticle line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+	
+\subsection*{32.}
+\textbf{Proposition}:  \\If $ \text{gcd}(a,b)=\text{gcd}(b,c)=1 $, then $ \text{gcd}(ab,c)=1 $.  
+\newline\textit{Proof.} Suppose $ \text{gcd}(a,b)=\text{gcd}(b,c)=1 $. Then by \textbf{Proposition 7.1} we can say $ \text{gcd}(a,b)=ak+cl, k,l\in\mathbb{Z} $ and $ \text{gcd}(b,c)=bn+cm, n,m\in\mathbb{Z} $. Then $ ak=1-cl $ and $ bn=1-cm $. We can then multiply $ ak $ and $ bn $ which results in $ ab(kn)=(1-cl)(1-cm)=1-cm-cl-c^2lm $ Then $ 1=ab(kn)+c^2lm+cm+cl=ab(kn)+c(clm+m+l)\rightarrow 1=abx+cy, x=km\in\mathbb{Z},y=clm+l+m\in\mathbb{Z}  $. Since $ 1=abx+cy $, then $ \text{gcd}(ab,c)=1 $.
+
+	
+\subsection*{36.}
+\textbf{Proposition}:  \\Suppose $ a,b\in\mathbb{N} $. Then $ a=\text{lcm}(a,b) $ if and only if $ b|a $. 
+\newline\textit{Proof.} Suppose $ a=\text{lcm}(a,b) $. By definition, this means $ b|a $ and $ a|a $.
+Next, suppose $ b|a $. Then $ a=bn, n\in\mathbb{Z} $ and $ a=ad, d\in\mathbb{Z} $ then $ a\geq \text{lcm}(a,b) $. Then since $ a|\text{lcm}(a,b) $, we have $ \text{lcm}(a,b) =ac, c\in\mathbb{Z}$, which tells us $ a\leq \text{lcm}(a,b) $. Since  $ a\geq \text{lcm}(a,b) $ and $ a\leq \text{lcm}(a,b) $, we know that $ a= \text{lcm}(a,b) $.  
+
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 2 ------------------------
+
+%------------------------ Begin Page 3 ------------------------
+
+\begin{minipage}[t]{0.40\textwidth}
+	
+	
+	
+\section*{Chapter 8}
+\subsection*{6.}
+\textbf{Proposition}:  \\Suppose $ A,B $, and $ C $ are sets. Prove that if $ A\subseteq B $, then $ A-C\subseteq A-B $.
+\newline\textit{Proof.} Suppose $ A,B $, and $ C $ are sets and $ A\subseteq B $. Then \\$ A-C=\{x:(x\in A)\land(x\not\in\ C)\} $. Since $ A\subseteq B $, then $ x\in B $. Then $ B-C=\{x:(x\in B)\land(x\not\in\ C)\} $. Since $ x\in A-C $ and $ x\in B-C $, then $ A-C\subseteq A-B $. 	
+
+\subsection*{12.}
+\textbf{Proposition}:  \\Suppose $ A,B $, and $ C $ are sets. then $ A-(B\cap C)=(A-B)\cup(A-C) $.
+\newline\textit{Proof.} Consider $ A-(B\cap C)\\= \{x:(x\in A)\land(x\not\in(B\land C))\}\\=\{x:(x\in A)\land(x\not\in B\land x\not\in C))\}$\\By DeMorgan's Law\\$ \{x:((x\in A)\land (x\not\in B))\lor ((x\in A)\land (x\not\in C))\} $\\By Distributive Law\\ Since \\$ A-B=\{x:(x\in A)\land(x\not\in\ B)\} $\\and\\ $ A-C=\{x:(x\in A)\land(c\not\in\ C)\} $ then since $ (x\in A-B) \lor (x\in A-C)\\\rightarrow (A-B)\cup (A-C)$.    
+
+\end{minipage}
+% Creates verticle line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	
+\subsection*{22.}
+\textbf{Proposition}:  \\Let $ A $ and $ B $ be sets. Prove that $ A\subseteq B $ if and only if $ A\cap B=A $.
+\newline\textit{Proof.} Suppose $ A\cap B=A $. Let $ x\in A $ be an arbitrary element. Then since $ A\cap B=A $, we know $ x\in A\cap B $. So $ x\in B $, therefore $ A\subseteq B $.
+\\Next suppose $ A\subseteq B $. If $ x\in A\cap B $, then $ x\in A $ so $ A\cap B\subseteq A $.
+\\Finally, suppose $ A\subseteq B $. If $ x\in A $ then $ x\in B $, which implies $ x\subseteq A\cap B $. Therefore $ A\subseteq A\cap B $. Since $ A\cap B\subseteq A  $ and $ A\subseteq A\cap B $ then $ A\cap B=A $.  
+
+
+\subsection*{28.}
+\textbf{Proposition}:  \\Prove $ \{12a+25b:a,b\in\mathbb{Z} \}=\mathbb{Z} $.
+\newline\textit{Proof.} Suppose $ 12a+25b $. Since $ a,b\in\mathbb{Z} $,$  12a+25b\in\mathbb{Z}  $.
+\\Next, suppose the set $ X=\{12a+25b:a,b\in\mathbb{Z} \}$, the set $ Y=\mathbb{Z} $, and $ y\in Y $. Then consider $ 12(-2)+25(1)=1 $ where $ a=-2 $ and $ b=1 $. Then we can multiply the equation by $ y $ and get $ 12(-2y)+25(y)=y $, where $ a=-2y $  and  $ b=y $. Then $ y\in Y $ implies $ y\in X $, therefore $ Y\subseteq X $. So $ \{12a+25b:a,b\in\mathbb{Z} \}=\mathbb{Z} $. 
+	
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 4 ------------------------
+
+\end{document}

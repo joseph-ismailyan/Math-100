@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows.meta}
+\usepackage{pgfplots}
+\usepackage[scr]{rsfso}
+\usepackage{array}
+\usepackage{centernot}
+\usepackage{stackengine}
+\usepackage{graphics,graphicx}
+\usepackage{pstricks,pst-node,pst-tree}
+\usetikzlibrary{arrows, automata}
+\hbadness=10001 %gets rid of "\hfill underfull" warning
+\stackMath
+
+\usepackage{tikz,pgfplots}
+
+\pgfplotsset{compat=1.10}
+% Uncomment to use "fillbetween" function
+% otherwise leave commented because
+% the red highlighting is annoying
+%\usepgfplotslibrary{fillbetween}
+
+
+% Change for each new hw week
+\newcommand{\dueDate}{\formatdate{8}{12}{2017}} % day/month/year
+\newcommand{\hwNum}{10}
+
+
+\begin{document}
+	
+\selectlanguage{USenglish}	
+%------------------------ Title Code ------------------------
+\title{Homework: Week \hwNum}
+\author{Joseph Ismailyan}
+\date{}
+\maketitle
+\begin{flushleft}
+Math 100 \\
+Due: \dueDate \\ 
+Professor Boltje \\
+MWF 9:20a-10:25a
+\end{flushleft}
+
+
+%------------------------ Begin Page 1 ------------------------
+\begin{minipage}[t]{0.40\textwidth}
+
+
+
+\section*{Section 12.1}
+\subsection*{8.}
+The set $ f=\{(x,y)\in\mathbb{Z}\times\mathbb{Z}:x+3y=4\} $ is not a function because $f(x)=\frac{4-x}{3}$ which is not always an element of the integers. For example, if $ x = 2 $ then $ f(x)\in\mathbb{Q} $. 
+
+\subsection*{10.}
+The set $ f=\{(x^3,x):x\in\mathbb{R}\} $ is function because every element $ x $ maps to exactly one element $ f(x) $. It also passes the horizontal line test.
+
+\end{minipage}
+% Creates vertical line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+
+\section*{Section 12.2}
+\subsection*{14.}
+\textbf{Problem:} Is the  function $ \theta:\mathscr{P}(\mathbb{Z})\rightarrow\mathscr{P}(\mathbb{Z}) $ defined as $ \theta(X)=\overline{X} $ injective? Surjective? Bijective?
+\\\\ Injective: Suppose $ X,Y\in\mathscr{P}(\mathbb{Z}) $ and $ \theta(X)=\theta(Y) $. Then $ \overline{X}=\overline{Y} $, so  $ \overline{\overline{X}}=\overline{\overline{Y}} \rightarrow X=Y $.
+\\\\Surjective: Suppose $ Y\in\mathscr{P}(\mathbb{Z}) $. Then $ \overline{Y}\in\mathscr{P}(\mathbb{Z}) $ and $ \theta(\overline{Y})=\overline{\overline{Y}}=Y $.
+\\\\Bijective: Since the function is both injective and surjective, then it is bijective.
+
+
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 1 --------------------------
+
+%------------------------ Begin Page 2 ------------------------
+
+\begin{minipage}[t]{0.40\textwidth}
+
+
+\subsection*{16.} Surjective: No functions are surjective because there are more elements in the codomain than in the domain, so there will always be element in the codomain which are left unmapped.
+\\\\Bijective: Since the function is not surjective, it cannot be bijective, so no functions are bijective.
+\\\\Injective: There are $ 7 $ options for the first element in the domain, 6 for the second, and so on. The last element in the domain has 3 options, so there will always be 2 left over. This means there are $ 7! $ different combinations and $ 2! $ will be left out. So, there are $ \frac{7!}{2!} $ total functions that are injective.
+
+\section*{Section 12.3}
+\subsection*{4.}
+\textit{Proof:} Consider a square with side length of 1 unit. If we want to place 4 points inside of the square as far apart from each other as possible, logically we would place one at each corner of the square. This incidentally breaks the square of side length 1 unit into 4 smaller square each with side length $ \frac{1}{2} $ unit. Using the Pythagorean theorem, we find that the distance from one corner of the smaller square to the opposite corner is $ \frac{\sqrt{2}}{2} $. So we have 4 smaller squares and 5 points, so by the Pigeon Hole Principle, there will be at least one pair of points that are within $ \frac{\sqrt{2}}{2} $ of each other.    
+
+\end{minipage}
+% Creates vertical line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+
+\section*{Section 12.4}
+\subsection*{4.}
+\textbf{Problem:} Suppose $ A=\{a,b,c\} $. Let $ f:A\rightarrow A $ be the function $ f=\{(a,c),(b,c),(c,c)\} $ and let $ g:A\rightarrow A $ be the function $ f=\{(a,a),(b,b),(c,a)\} $. Find $ g\circ f$ and $ f\circ g $.
+\\\textbf{Answer: } $ g\circ f =\{(a,a),(b,a),(c,a)\}$ and $ f\circ g =\{(a,c),(b,c),(c,c)\}$.
+
+\section*{Section 12.5}
+\subsection*{8.}
+Injective: Suppose $ X,Y\in\mathscr{P}(\mathbb{Z}) $ and $ \theta(X)=\theta(Y) $. Then $ \overline{X}=\overline{Y} $, so  $ \overline{\overline{X}}=\overline{\overline{Y}} \rightarrow X=Y $.
+\\\\Surjective: Suppose $ Y\in\mathscr{P}(\mathbb{Z}) $. Then $ \overline{Y}\in\mathscr{P}(\mathbb{Z}) $ and $ \theta(\overline{Y})=\overline{\overline{Y}}=Y $.
+\\\\Bijective: Since the function is both injective and surjective, then it is bijective.
+\\ So the function is bijective. The inverse of $ \theta(X) $ is $ \theta^{-1} (X)=\overline{X}$, the complement of the complement is the set $ X $, so $ \theta = \theta^{-1} $.
+
+\end{minipage}
+\pagebreak
+
+%------------------------ End Page 2 --------------------------
+
+%------------------------ Begin Page 3 ------------------------
+
+\begin{minipage}[t]{0.40\textwidth}
+	
+\section*{Section 12.6}
+\subsection*{10.}
+\textbf{Problem:} Given $ f:A\rightarrow B $ and subsets $ Y,Z\subseteq B $, prove $ f^{-1}(Y\cap Z)=f^{-1}(Y)\cap f^{-1}(Z) $.
+\\\texttt{Proof:} Since we must show that two sets are equal, we must show that they're subsets of each other. So first, for no particular reason, we'll show that $ f^{-1}(Y\cap Z)\subseteq f^{-1}(Y)\cap f^{-1}(Z) $. Suppose $ a\in Y\cap Z $, so $ f(a)\in Y $ and $ f(a)\in Z $. Then $ a\in f^{-1}(Y) $ and $ a\in f^{-1}(Z) $, so $ a\in f^{-1}(Y)\quad\cap\quad a\in f^{-1}(Z) \rightarrow f^{-1}(Y\cap Z)\subseteq f^{-1}(Y)\cap f^{-1}(Z) $. Now we must show that $ f^{-1}(Y)\cap f^{-1}(Z)\subseteq f^{-1}(Y\cap Z) $. Suppose $ a\in f^{-1}(Y)\cap f^{-1}(Z) $ so $a\in f^{-1}(Y) $ and $ a\in f^{-1}(Z) $. Then $ f(a)\in Y $ and $ f(a)\in Z $, so $ f(a)\in Y\cap Z $, then $ a\in f^{-1}(Y\cap Z) $, so $ f^{-1}(Y)\cap f^{-1}(Z)\subseteq f^{-1}(Z)$. Therefore $ f^{-1}(Y\cap Z)=f^{-1}(Y)\cap f^{-1}(Z) $.  
+\end{minipage}
+% Creates vertical line
+\hfill\vline\hfill
+\begin{minipage}[t]{0.45\textwidth}
+	
+
+\subsection*{14.}
+\textbf{Problem:} Let $ f:A\rightarrow B $ be a function and $ Y\subseteq B $. Prove or disprove $ f^{-1}(f(f^{-1}(Y))) =f^{-1}(Y) $. Since we must show that two sets are equal, we must show that they're subsets of each other. Suppose $ y\in f^{-1}(f(f^{-1}(Y))) $. Then $ f^{-1}(y)\in f(f^{-1}(Y))\rightarrow f(f^{-1}(y))\in f^{-1}(Y) \rightarrow (f^{-1}\circ f)(y)\in f^{-1}(Y)$. Then $ y\in f^{-1}(f(f^{-1}(Y)))\implies y\in f^{-1}(Y) $. So $ f^{-1}(f(f^{-1}(Y)))\subseteq f^{-1}(Y) $. Next, suppose $ y\in f^{-1}(Y) $, then $ f(y)\in f(f^{-1}(Y))\rightarrow f(f^{-1}(y))\in f^{-1}(f(f^{-1}(Y))) \rightarrow (f^{-1}\circ f)(y)\in f^{-1}(f(f^{-1}(Y)))\rightarrow y\in f^{-1}(f(f^{-1}(Y)))$. So $y\in f^{-1}(Y) \implies y\in f^{-1}(f(f^{-1}(Y))) $. Then $ f^{-1}(Y)\subseteq f^{-1}(f(f^{-1}(Y))) $. Thus $ f^{-1}(f(f^{-1}(Y))) =f^{-1}(Y) $.     
+	
+	
+
+\end{minipage}
+
+%------------------------ End Page 4 --------------------------
+
+%------------------------ Begin Page 5 ------------------------
+
+
+%------------------------ End Page 5 ------------------------
+\end{document}

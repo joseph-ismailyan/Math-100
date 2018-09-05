@@ -1,0 +1,125 @@
+
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[USenglish]{babel}
+\usepackage[nodayofweek,level]{datetime}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usetikzlibrary{intersections,arrows.meta}
+\usepackage{pgfplots}
+\usepackage[scr]{rsfso}
+\usepackage{array}
+\usepackage{stackengine}
+\hbadness=10001 %gets rid of "\hfill underfull" warning
+\stackMath
+
+\usepackage{tikz,pgfplots}
+
+\pgfplotsset{compat=1.10}
+% Uncomment to use "fillbetween" function
+% otherwise leave commented because
+% the red highlighting is annoying
+%\usepgfplotslibrary{fillbetween}
+
+
+% Change for each new hw week
+\newcommand{\dueDate}{\formatdate{22}{11}{2017}} % day/month/year
+\newcommand{\hwNum}{8}
+
+
+\begin{document}
+	
+	\selectlanguage{USenglish}	
+	%------------------------ Title Code ------------------------
+	\title{Homework: Week \hwNum}
+	\author{Joseph Ismailyan}
+	\date{}
+	\maketitle
+	\begin{flushleft}
+		Math 100 \\
+		Due: \dueDate \\ 
+		Professor Boltje \\
+		MWF 9:20a-10:25a
+	\end{flushleft}
+	
+	
+	%------------------------ Begin Page 1 ------------------------
+	\begin{minipage}[t]{0.40\textwidth}
+		
+		
+		
+		\section*{Chapter 10. }
+		\subsection*{2.}
+		\textbf{Proposition}: For every integer $ n\in\mathbb{N} $, it follows that $ 1^2+2^2+3^2+\ldots+n^2=\frac{n(n+1)(2n+1)}{6} $.  
+		\newline\textit{Proof.} Observe that if $ n=1 $ the statement $ 1^2=\frac{1((1)+1)(2(1)+1)}{6}=\frac{1(2)(3)}{6}=1 $, so the statement is true. Now let $ k\geq  1$, so $ 1^2+2^2+3^2+\ldots+(k+1)^2 = 1^2+2^2+3^2+\ldots+k^2+(k+1)^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2 = (k+1)\frac{k(2k+1)}{6} + (k+1) = (k+1)(\frac{k(2k+1+ 6k+6)}{6}) = (k+1)(\frac{2k^2+k+6k+6}{6}) = (k+1)(\frac{2k^2+7k+6}{6}) = (k+1)(\frac{2k^2+4k+3k+6}{6}) = (k+1)(\frac{2k(k+1)+3(k+2)}{6})=(k+1)(\frac{(k+2)(2k+3)}{6})=\frac{(k+1)(k+1+1)(2k+2+1)}{6} = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6} $. Therefore $ 1^2+2^2+3^2+\ldots+(k+1)^2 = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6} $. It follows by induction that $ 1^2+2^2+3^2+\ldots+n^2=\frac{n(n+1)(2n+1)}{6} $ for every natural number $ n $.
+		
+		
+	\end{minipage}
+	% Creates vertical line
+	\hfill\vline\hfill
+	\begin{minipage}[t]{0.45\textwidth}
+		
+		
+		\subsection*{4.}
+		\textbf{Proposition}: If $ n\in\mathbb{N} $, then $ 1\cdot2+2\cdot3+3\cdot4+4\cdot5+\dots+n(n+1)=\frac{n(n+1)(n+2)}{3} $.
+		\newline\textit{Proof.}  Observe that if $ n=1 $ the statement $ 1(1+1)=\frac{1(1+1)(1+2)}{3}\rightarrow 2=\frac{1(2)(3)}{3}=2 $ so the statement is true for $ n=1 $. Now let $ k\geq 1 $, so  $ 1\cdot2+2\cdot3+3\cdot4+4\cdot5+\dots+(k+1)((k+1)+1) = 1\cdot2+2\cdot3+3\cdot4+4\cdot5+\dots+k(k+1)+(k+1)((k+1)+1) = \frac{k(k+1)(k+2)}{3} + (k+1)((k+1)+1) = \frac{k(k+1)(k+2)}{3} + (k+1)(k+2) = \frac{k(k+1)(k+2) +3(k+1)(k+2)}{3} = \frac{(k+1)(k+2)(k+3)}{3} = \frac{(k+1)((k+1)+1)((k+1)+2)}{3} $. It follows by induction that $ 1\cdot2+2\cdot3+3\cdot4+4\cdot5+\dots+n(n+1)=\frac{n(n+1)(n+2)}{3} $ for every natural number $ n $. 
+		
+		
+	\end{minipage}
+	\pagebreak
+	
+	%------------------------ End Page 1 ------------------------
+	
+	%------------------------ Begin Page 2 ------------------------
+	
+	\begin{minipage}[t]{0.40\textwidth}
+		
+		\subsection*{8.}
+		\textbf{Proposition}: If $ n\in\mathbb{N} $, then $ \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\dots+\frac{n}{(n+1)!}=1-\frac{1}{(n+1)!}$.
+		\newline\textit{Proof.} Observe that if $ n=1 $, then $ \frac{1}{(1+1)!}=1-\frac{1}{(1+1)!}\rightarrow \frac{1}{2}=1-\frac{1}{2}=\frac{1}{2} $, so the statement is true for $ n=1 $. Now let $ k\geq 1 $, so $ \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\dots+\frac{(k+1)}{((k+1)+1)!} = \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\dots+\frac{k}{(k+1)!}+\frac{(k+1)}{((k+1)+1)!} = 1-\frac{1}{(k+1)!} + \frac{(k+1)}{((k+1)+1)!} = 1-\frac{1}{(k+1)!} + \frac{(k+1)}{(k+2)!} = 1-(\frac{1}{(k+1)!} - \frac{(k+1)}{(k+2)!}) = 1-(\frac{1}{(k+1)!} - \frac{(k+1)}{(k+2)(k+1)!}) = 1-\frac{k+1-(k+1)}{(k+2)(k+1)!} = 1-\frac{1}{(k+2)(k+1)!} = 1-\frac{1}{(k+2)!} =  1-\frac{1}{((k+1)+1)!} $. It follows by induction that $ \frac{1}{2!}+\frac{2}{3!}+\frac{3}{4!}+\dots+\frac{n}{(n+1)!}=1-\frac{1}{(n+1)!}$ for every natural number $ n $.
+		
+		\subsection*{20.}
+		\textbf{Proposition}: $ (1+2+3+\dots+n)^2=1^3+2^3+3^3+\dots+n^3 $ for every $ n\in\mathbb{N} $.
+		\newline\textit{Proof.} Observe that if $ n=1 $, then $ 1^2=1^3 $, which is true. Now let $ k\geq1 $, so then $ (1+2+3+\dots+(k+1))^2 = (1+2+3+\dots+k+(k+1))^2. $. If we say $ a=(1+2+3+\dots+k) $ and $ b=(k+1) $ then $ (a+b)^2 = a^2+b^2+2ab $, then substituting back in for $ a $ and $ b $ we get $ (1+2+3+\dots+k)^2 + (k+1)^2+2(1+2+3+\dots+k)(k+1)$. Note that $ (1+2+3+\dots+k) = \frac{k(k+1)}{2} $ and $ (1+2+3+\dots+k)^2 = 1^3+2^3+3^3+\dots+n^3 $. So $ 1^3+2^3+3^3+\dots+n^3 + (k+1)^2+2\frac{k(k+1)}{2}(k+1) = 1^3+2^3+3^3+\dots+n^3 + (k+1)^2+k(k+1) = 1^3+2^3+3^3+\dots+n^3 + (k+1)^2(k+1) = 1^3+2^3+3^3+\dots+n^3 + (k+1)^3 $. It follows by induction that $ (1+2+3+\dots+n)^2=1^3+2^3+3^3+\dots+n^3 $ for every $ n\in\mathbb{N} $.
+		
+		
+	\end{minipage}
+	% Creates verticle line
+	\hfill\vline\hfill
+	\begin{minipage}[t]{0.45\textwidth}
+		
+		
+		\subsection*{30.}
+		\textbf{Proposition}: $F_n$ is the $n$th Fibonacci number. Show that $ F_n=\frac{(\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n}{\sqrt{5}}  $
+		\textit{Proof.} Observe that if $ n=1 $, then $ F_1=\frac{(\frac{1+\sqrt{5}}{2})^1-(\frac{1-\sqrt{5}}{2})^1}{\sqrt{5}} = \frac{\frac{2\sqrt{5}}{2}}{\sqrt{5}} = 1 $. And if $ n=2 $, then $F_2=\frac{(\frac{1+\sqrt{5}}{2})^2-(\frac{1-\sqrt{5}}{2})^2}{\sqrt{5}} = \frac{(\frac{3+\sqrt{5}}{2})-(\frac{3-\sqrt{5}}{2})}{\sqrt{5}} = \frac{2\sqrt{5}}{2\sqrt{5}} = 1 $. Now let $ k\geq 1 $. Note that $ F_{k+2}=F_k+F_{k+1} $. So then
+		$ \frac{(\frac{1+\sqrt{5}}{2})^k-(\frac{1-\sqrt{5}}{2})^k}{\sqrt{5}}+\frac{(\frac{1+\sqrt{5}}{2})^{k+1}-(\frac{1-\sqrt{5}}{2})^{k+1}}{\sqrt{5}} = $
+		$ \frac{(\frac{1+\sqrt{5}}{2})^k - (\frac{1-\sqrt{5}}{2})^k + (\frac{1+\sqrt{5}}{2})(\frac{1+\sqrt{5}}{2})^k - (\frac{1-\sqrt{5}}{2})(\frac{1-\sqrt{5}}{2})^k}{\sqrt{5}} = $
+		$ \frac{(\frac{1+\sqrt{5}}{2})^k + (\frac{1+\sqrt{5}}{2})(\frac{1+\sqrt{5}}{2})^k -[(\frac{1-\sqrt{5}}{2})^k+(\frac{1-\sqrt{5}}{2})(\frac{1-\sqrt{5}}{2})^k]}{\sqrt{5}} =$
+		$ \frac{(\frac{1+\sqrt{5}}{2})^k(1+(\frac{1+\sqrt{5}}{2}))-[(\frac{1-\sqrt{5}}{2})^k(1+(\frac{1-\sqrt{5}}{2}))]}{\sqrt{5}} = $
+		$ \frac{(\frac{1+\sqrt{5}}{2})^k(\frac{3+\sqrt{5}}{2}) - (\frac{1-\sqrt{5}}{2})^k(\frac{3-\sqrt{5}}{2})}{\sqrt{5}} =$\\
+		Note that $ \frac{3+\sqrt{5}}{2} = (\frac{1+\sqrt{5}}{2})^2 $ \\and $ \frac{3-\sqrt{5}}{2} = (\frac{1-\sqrt{5}}{2})^2 $. Continuing...\\
+		$ \frac{(\frac{1+\sqrt{5}}{2})^k(\frac{1+\sqrt{5}}{2})^2 - (\frac{1-\sqrt{5}}{2})^k(\frac{1-\sqrt{5}}{2})^2}{\sqrt{5}} =$\\
+		$ \frac{(\frac{1+\sqrt{5}}{2})^{k+2}-(\frac{1-\sqrt{5}}{2})^{k+2}}{\sqrt{5}}$.
+		It follows by induction that $ F_n=\frac{(\frac{1+\sqrt{5}}{2})^n-(\frac{1-\sqrt{5}}{2})^n}{\sqrt{5}}  $ for every $ n\in\mathbb{N} $.
+		
+		
+		\subsection*{32.}
+		\textbf{Proposition}: Show that the number of $ n $-digit binary numbers that have no consecutive
+		1's is the Fibonacci number $  F_{n+2} $\\
+		\textit{Proof.} Let $ n=1 $, then $ a_1=2\rightarrow F_{1+2}=F_3=2 $. Assume that the given statement is true for $ n=k $. So $ a_k=F_{k+2} $. Observe that the sequence of $ a_n's $ satisfy $ a_{n+1}=a_n+a_{n-1} $. So $ a_{n+1}=a_n+a_{n-1} = F_{n+2}+F_{(n-1)+2} = F_{n+2}+F_{n+1}= F_3 = F_{(n+1)+2}$ thus the result is true for $ n=k+1 $. Therefore by induction, the number of $ n $-digit binary numbers that have no consecutive
+		1's is the Fibonacci number $  F_{n+2} $, where $ n\in\mathbb{N} $.
+		
+		
+		
+		
+	\end{minipage}
+	\pagebreak
+	
+	%------------------------ End Page 4 ------------------------
+	
+\end{document}
+
